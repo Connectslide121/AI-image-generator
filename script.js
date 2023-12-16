@@ -1,4 +1,5 @@
-const sarrera = "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";
+import API_KEY from './config.js';;
+const sarrera = API_KEY;
 const input = document.querySelector("input");
 const submitButton = document.querySelector(".submit-button");
 const imageSection = document.querySelector(".images");
