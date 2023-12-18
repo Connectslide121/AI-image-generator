@@ -22,8 +22,7 @@ function startApp() {
 async function getImages() {
   const imageToRemove = imageSection.querySelector(".image-container");
   imageToRemove.remove();
-  loadingMessage.innerText = "Generating image...";
-  loadingMessage.style.display = "block";
+  loadingMessage.style.display = "flex";
 
   const options = {
     method: "POST",
@@ -54,7 +53,6 @@ async function getImages() {
     });
   } catch (error) {
     console.error(error);
-    loadingMessage.innerText = "Error fetching images. Please try again.";
   } finally {
     loadingMessage.style.display = "none";
   }
@@ -70,4 +68,4 @@ promptInputForm.addEventListener("submit", function (event) {
   event.preventDefault();
   getImages();
 });
-submitButton.addEventListener("click");
+submitButton.addEventListener("click", getImages);
