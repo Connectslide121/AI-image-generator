@@ -62,4 +62,7 @@ async function getImages() {
 if (startButton) {
   startButton.addEventListener("click", startApp);
 }
-submitButton.addEventListener("click", getImages);
+
+if (submitButton) {
+  submitButton.addEventListener("click", getImages);
+}
