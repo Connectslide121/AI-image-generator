@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styleHomePage.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>AI image generator</title>
   </head>
   <body>
-    <div class="container">
+    <div class="home-container">
       <div class="header">
         <img src="images/openaiLogo.jpg" alt="" />
-        <h1>Image Generator</h1>
+        <h1>Image generator</h1>
       </div>
       <div class="main-container">
         <div class="instructions">
@@ -34,11 +34,33 @@
         <p class="start-button">Start generating!</p>
       </div>
     </div>
+    <div class="generator-container">
+      <div class="header">
+        <img src="images/openaiLogo.jpg" alt="" />
+        <h1>Image generator</h1>
+      </div>
+      <div class="images">
+        <div class="image-container"></div>
+        <h1 class="loading-message"></h1>
+      </div>
+      <div class="input">
+        <div class="input-container">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Input your prompt here"
+          />
+          <p class="submit-button">
+            <i class="fa-solid fa-circle-arrow-up"></i>
+          </p>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://kit.fontawesome.com/05049b2b78.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="startScript.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

@@ -1,13 +1,23 @@
-import API_KEY from "./startScript";
-console.log("Current value of sarrera:", API_KEY);
+const homePage = document.querySelector(".home-container");
+const generatorPage = document.querySelector(".generator-container");
+
+const keyInputElement = document.querySelector(".key-input");
+const startButton = document.querySelector(".start-button");
 
 const input = document.querySelector(".prompt");
 const submitButton = document.querySelector(".submit-button");
 const imageSection = document.querySelector(".images");
 const loadingMessage = document.querySelector(".loading-message");
 
+let API_KEY;
+
+function startApp() {
+  API_KEY = keyInputElement.value;
+  homePage.style.display = "none";
+  generatorPage.style.display = "flex";
+}
+
 async function getImages() {
-  console.log("Current value of sarrera:", API_KEY);
   const imageToRemove = imageSection.querySelector(".image-container");
   imageToRemove.remove();
   loadingMessage.innerText = "Generating image...";
@@ -48,4 +58,9 @@ async function getImages() {
   }
 }
 
-submitButton.addEventListener("click", getImages);
+if (startButton) {
+  startButton.addEventListener("click", startApp);
+}
+if (submitButton) {
+  submitButton.addEventListener("click", getImages);
+}

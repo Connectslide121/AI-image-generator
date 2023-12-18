@@ -7,18 +7,15 @@
 
 body {
   background: #020e18;
-  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
 }
 
-.container {
+.home-container {
   background: white;
   width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
 }
 
 .header {
@@ -32,14 +29,58 @@ body {
 
 .header img {
   height: 100%;
+  padding: 20px;
 }
 
 .header h1 {
   font-weight: 400;
   font-size: 50px;
-  margin-left: 30px;
 }
 
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px 30px;
+}
+
+.instructions {
+  min-height: 40vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 48px;
+}
+
+.key-input {
+  width: 600px;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0 0 10px #020e18;
+  text-align: center;
+}
+
+.start-button {
+  width: 300px;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  background: #020e18;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #020e18;
+}
+
+.generator-container {
+  background: white;
+  width: 70vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
 .loading-message {
   color: #020e18;
 }
@@ -55,7 +96,7 @@ body {
 }
 
 .image-container {
-  flex-basis: 50%;
+  width: 50%;
   padding: 30px;
   overflow: clip;
 }
@@ -86,6 +127,7 @@ body {
   padding: 10px;
   font-size: 16px;
   box-shadow: 0 0 10px #020e18;
+  text-align: center;
 }
 
 .submit-button {
