@@ -1,9 +1,11 @@
 const homePage = document.querySelector(".home-container");
 const generatorPage = document.querySelector(".generator-container");
 
+const keyInputForm = document.querySelector(".key-input-form");
 const keyInputElement = document.querySelector(".key-input");
 const startButton = document.querySelector(".start-button");
 
+const promptInputForm = document.querySelector(".prompt-input-form");
 const input = document.querySelector(".prompt");
 const submitButton = document.querySelector(".submit-button");
 const imageSection = document.querySelector(".images");
@@ -58,9 +60,14 @@ async function getImages() {
   }
 }
 
-if (startButton) {
-  startButton.addEventListener("click", startApp);
-}
-if (submitButton) {
-  submitButton.addEventListener("click", getImages);
-}
+keyInputForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  startApp();
+});
+startButton.addEventListener("click", startApp);
+
+promptInputForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  getImages();
+});
+submitButton.addEventListener("click");
