@@ -1,13 +1,26 @@
-import API_KEY from './config.js';;
-const sarrera = API_KEY;
-const input = document.querySelector("input");
+import API_KEY from "./config.js";
+
+const keyInputElement = document.querySelector(".key-input");
+const startButton = document.querySelector(".start-button");
+
+const input = document.querySelector(".prompt");
 const submitButton = document.querySelector(".submit-button");
 const imageSection = document.querySelector(".images");
 const loadingMessage = document.querySelector(".loading-message");
 
+let sarrera = API_KEY;
+
+function startApp() {
+  let userKey = keyInputElement.value;
+  if (userKey.trim !== "") {
+    sarrera = userKey;
+  }
+  window.location.href = "imageGenerator.html";
+}
+
 async function getImages() {
   const imageToRemove = imageSection.querySelector(".image-container");
-  imageToRemove.remove()
+  imageToRemove.remove();
   loadingMessage.innerText = "Generating image...";
   loadingMessage.style.display = "block";
 
@@ -15,13 +28,13 @@ async function getImages() {
     method: "POST",
     headers: {
       Authorization: `Bearer ${sarrera}`,
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
       prompt: input.value,
       n: 1,
-      size: "1024x1024",
-    }),
+      size: "1024x1024"
+    })
   };
   try {
     const response = await fetch(
@@ -29,7 +42,6 @@ async function getImages() {
       options
     );
     const data = await response.json();
-
 
     data?.data.forEach((imageObject) => {
       const imageContainer = document.createElement("div");
@@ -47,4 +59,7 @@ async function getImages() {
   }
 }
 
+if (startButton) {
+  startButton.addEventListener("click", startApp);
+}
 submitButton.addEventListener("click", getImages);

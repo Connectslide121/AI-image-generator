@@ -3,27 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleHomePage.css" />
     <title>AI image generator</title>
   </head>
   <body>
     <div class="container">
-      <div class="header">OpenAI API Image Generator</div>
-      <div class="images">
-        <div class="image-container"></div>
-        <h1 class="loading-message"></h1>
+      <div class="header">
+        <img src="images/openaiLogo.jpg" alt="" />
+        <h1>Image Generator</h1>
       </div>
-      <div class="input">
-        <div class="input-container">
-          <input type="text" />
-          <p class="submit-button">
-            <i class="fa-solid fa-circle-arrow-up"></i>
+      <div class="main-container">
+        <div class="instructions">
+          <p>
+            To use this app, you need to insert a valid OpenAI API key in the
+            form below.
+            <br />If you don't know how to get one, you can follow
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=aVog4J6nIAU"
+              >this tutorial</a
+            >. <br />If you don't insert a valid OpenAI API key, the app will
+            start, but it will not work.
           </p>
         </div>
+        <input
+          class="key-input"
+          type="text"
+          placeholder="Insert your API key here"
+        />
+        <p class="start-button">Start generating!</p>
       </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/05049b2b78.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/05049b2b78.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="config.js"></script>
     <script type="module" src="script.js"></script>
   </body>
