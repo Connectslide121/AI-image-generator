@@ -8,7 +8,7 @@ const submitButton = document.querySelector(".submit-button");
 const imageSection = document.querySelector(".images");
 const loadingMessage = document.querySelector(".loading-message");
 
-let sarrera = API_KEY;
+let sarrera;
 
 function startApp() {
   let userKey = keyInputElement.value;
